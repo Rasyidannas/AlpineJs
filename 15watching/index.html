@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Model</title>
+
+    <!-- Alpine Js -->
+    <script src="https://unpkg.com/alpinejs" defer></script>
+
+    <!-- Marked -->
+    <script src="https://cdn.jsdelivr.net/npm/marked@2.1.3/marked.min.js"></script>
+
+</head>
+<body>
+    <!-- Example 1 -->
+    <!-- watch is for track a element or value -->
+    <!-- <div x-data="{
+            message: 'Hello',
+
+            init(){
+                this.$watch('message', (value)=>{
+                    console.log('changed', value)
+                })
+            }
+        }">
+        <span x-text="message"></span>
+        <button x-on:click="message = 'Something else'">Change message</button>
+    </div> -->
+
+    <!-- Example 2 -->
+    <div 
+        x-data="{
+          query: '',
+          results: [],
+
+          performSearch(){
+            //api
+            this.results = [
+                'apple', 'banana', 'manggo'
+            ]
+          },
+
+          //watch will track query variable
+          init(){
+            this.$watch('query', (query)=>{
+                this.performSearch(query)
+            })
+          }
+        }"
+    >
+        <span x-text="results"></span>
+        <input type="text" x-model="query">
+    </div>
+</body>
+
+</html>

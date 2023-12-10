@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Model</title>
+
+    <!-- Alpine Js -->
+    <script src="https://unpkg.com/alpinejs" defer></script>
+
+    <style>
+        .bold{
+            font-weight: 700;
+        }
+
+        .blue{
+            color: blue;
+        }
+    </style>
+</head>
+<body>
+    <!-- Example 1 -->
+    <!-- <div x-data="">
+        <span class="blue" x-bind:class="{'bold': false}">Am I bold?</span>
+    </div> -->
+    
+    <!-- Example 2 -->
+    <!-- <div x-data="{selected: false}">
+        <span x-bind:class="{'bold': selected}">Am I bold?</span>
+
+        <button x-on:click="selected = true">Make it bold</button>
+    </div> -->
+
+    <!-- Example 3 -->
+    <!-- this is mean if name empty button will be disabled -->
+    <!-- <form x-data="{name:''}" x-on:submit.prevent="alert(`Hey ${name}`)">
+        <input type="text" x-model="name">
+        <button type="submit" x-bind:disabled="name === ''">Let's go</button>
+    </form> -->
+
+    <!-- Example 4 -->
+    <div x-data="{progress: 0}">
+        <progress max="100" x-bind:value="progress">
+            <span x-text="`${progress}%`"></span>
+        </progress>
+
+        <button x-on:click="progress += 5">Increament</button>
+    </div>
+</body>
+</html>
